@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 04</title>
+</head>
+
+<body>
+    <div class="task" data-status="completed">
+        Купить молоко
+    </div>
+
+    <div class="task" data-status="expired">
+        Выгулять собаку
+    </div>
+
+    <div class="task">
+        Выучить JavaScript
+    </div>
+
+    <div class="task">
+        Спасти мир
+    </div>
+
+    <script>
+        /*
+        Задание:
+        Для элементов с атрибутом data-status="expired" сделайте рамку красного цвета. Для элементов с атрибутом data-status="completed" выведите рамку зеленого цвета.
+        */
+
+    let elements = document.querySelectorAll(".task");
+    for (element of elements) {
+        changeStatus (element);
+    }
+    function changeStatus (el) {
+        el.style.marginBottom = "2px";
+        if (el.getAttribute("data-status") == "completed") {
+            el.style.border = "2px solid green";
+            el.style.width = "300px";
+        } else if (el.getAttribute("data-status") == "expired") {
+            el.style.border = "2px solid red";
+            el.style.width = "300px";
+        }
+    }
+    </script>
+</body>
+
+</html>
